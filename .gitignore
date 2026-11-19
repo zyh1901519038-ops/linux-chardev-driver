@@ -1,0 +1,13 @@
+*.o
+*.ko
+*.mod
+*.mod.c
+*.symvers
+*.order
+.tmp_versions/
+*.cmd
+userspace/mydev_test
+.DS_Store
+
+# 本地调试笔记，不进仓库
+DEBUGGING-NOTES.local.md
