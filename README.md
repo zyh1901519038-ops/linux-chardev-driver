@@ -1,5 +1,7 @@
 # Linux 字符设备驱动 + 用户态测试程序
 
+[![build-and-test](https://github.com/zyh1901519038-ops/linux-chardev-driver/actions/workflows/build.yml/badge.svg)](https://github.com/zyh1901519038-ops/linux-chardev-driver/actions/workflows/build.yml)
+
 一个**虚拟字符设备**（不需要真实硬件）：支持阻塞 / 非阻塞读、`poll`、`ioctl`、多进程并发安全。
 
 > **内核版本提示**：不同内核的 API 有差异，例如 `class_create()` 在 6.4 之后改为单参数。
