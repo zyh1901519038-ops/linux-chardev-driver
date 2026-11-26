@@ -1,0 +1,26 @@
+name: build-and-test
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install build deps and kernel headers
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential linux-headers-$(uname -r) || \
+            sudo apt-get install -y build-essential linux-headers-generic
+
+      - name: Build kernel module
+        run: make
+
+      - name: Build userspace test
+        run: make -C userspace
+
+      - name: Run test suite
+        run: sudo bash run_tests.sh
